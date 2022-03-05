@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Appointment managing page</title>
+<style type="text/css">
+a{
+ color:purple;
+}
+h1{
+ 
+ color:purple;
+}
+h2{
+ 
+ color:purple;
+}
+body{
+
+   background-image:url('/image/appoint.jpg');
+   background-size:100% 100%
+}
+
+</style>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+
+
+ <h1> Welcome To Hospital</h1>
+ <hr>
+ <h2> Take Appointment</h2>
+ 
+ <form action="#" th:action="@{/saveAppointment}" th:object= "${appointment}" method="POST" >
+   <input type="text" th:field="*{id}" placeholder="Appointment_Id" class="form-control mb-4 col-4">
+    <input type="date" th:field="*{appointmentDate}" placeholder="Appointment_Date" class="form-control mb-4 col-4"> 
+    <h6>Doctor Available from 10:00AM To 7:00PM </h6>
+    
+     <input type="time" th:field="*{appointmentTime}" placeholder="Appointment_Time" class="form-control mb-4 col-4">
+      <input type="text" th:field="*{patient}" placeholder="Patient_Id" class="form-control mb-4 col-4">
+       
+         <button type="submit" class="btn btn-info col-2">Taken Appointment</button>
+        </form>
+        
+        <hr>
+<form th:action="@{/patientlogout}" method="post">
+        <input type="submit" class="btn btn-info col-2" value="Logout" />
+        </form>
+		<a th:href = "@{/appointmentlist}"> Back to Appointment List</a>
+
+
+</body>
+</html>

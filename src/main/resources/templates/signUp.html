@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+h1{
+ 
+ color:purple;
+}
+
+body{
+
+   background-image:url('/image/hs1.jpg');
+   
+}
+</style>
+
+</head>
+<body>
+
+<h1>SignUp</h1>
+ <form action="#" th:action="@{/add}" th:object="${user}" method="post">
+Email:<input type="text" th:field="*{username}" name="username"/>
+<hr>
+
+password:<input type="password" th:field="*{password}" name="password"/>
+<hr>
+Role:<input type="role" th:field="*{role}" name="role"/>
+<hr>
+UserName:<input type="email" th:field="*{email}" name="email"/>
+
+<input type="Submit" />
+<input type="reset" />
+
+</form>
+</body>
+</html>

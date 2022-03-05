@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+h1{
+ 
+ color:purple;
+}
+
+body{
+
+   background-image:url('/image/hs1.jpg');
+   
+}
+</style>
+
+<body>
+<h1>SignIn</h1>
+<p th:text="${error}" />
+
+	<form action="signIn" method="post">
+
+
+		UserName:<input type="text" name="username" />
+		<hr>
+		Password:<input type="password" name="password" />
+		<hr>
+		<!--  a th:href="@{/userhome}" href="userhome.html" class="btn btn-primary startbtn">Submit</a-->
+
+
+
+		<input type="submit" /> <input type="reset" />
+	</form>
+
+</head>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient Manages Page</title>
+<style type="text/css">
+
+h1{
+ text-align:center;
+ color:purple;
+}
+h2{
+ 
+ color:purple;
+}
+body{
+
+   background-image:url('/image/p2.jpg');
+   background-size:100% 100%
+}
+
+</style>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+ 
+ <h1> Welcome Patient </h1>
+ <hr>
+ <h2> Save Patient</h2>
+ 
+ <form action="#" th:action="@{/savePatient}" th:object= "${patient}" method="POST" >
+   <input type="text" th:field="*{id}" placeholder="Patient_Id" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{name}" placeholder="Patient_name" class="form-control mb-4 col-4">
+     <input type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4 col-4">
+     <label>Gender:</label>
+        <input type="radio" th:field="*{gender}" value="Male" />Male
+        <input type="radio" th:field="*{gender}" value="Female" />Female
+        <input type="radio" th:field="*{gender}" value="Others" />Others
+        <br/>
+       <input type="text" th:field="*{disease}" placeholder="Disease" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{emailId}" placeholder="EmailId" class="form-control mb-4 col-4">
+         <input type="text" th:field="*{contactNumber}" placeholder="ContactNumber" class="form-control mb-4 col-4">
+         <input type="text" th:field="*{bloodGroup}" placeholder="BloodGroup" class="form-control mb-4 col-4">
+         <input type="text" th:field="*{doctor}" placeholder="Doctor_Id" class="form-control mb-4 col-4">
+         
+         <button type="submit" class="btn btn-info col-2">Save Patient</button>
+        </form>
+        
+        
+         <br>
+        <form th:action="@{/patientlogout}" method="post">
+        <input type="submit" class="btn btn-info col-2" value="Logout" />
+        </form>
+        
+        <hr>
+
+		<a th:href = "@{/patientlist}"> Back to Patient List</a>
+ 
+</body>
+</html>
